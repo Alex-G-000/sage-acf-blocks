@@ -23,9 +23,6 @@ class ACFBlocksServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app['acfblocks']->loadThemeTemplateHooks();
-
-
         // Check whether WordPress and ACF are available; bail if not.
         if (! function_exists('acf_register_block_type') ||
             ! function_exists('add_filter') ||
@@ -40,18 +37,14 @@ class ACFBlocksServiceProvider extends ServiceProvider
     public function bindFilters()
     {
         $acfblocks = $this->app['acfblocks'];
+
         // Add the default blocks location, 'views/blocks', via filter
         add_filter('sage-acf-gutenberg-blocks-templates', [$this->app['acfblocks'], 'blockDirectories']);
-
     }
 
     public function bindSetupAction()
-    {
-        add_action('after_setup_theme', [$this->app['acfblocks'], 'addThemeSupport']);
-
-        /**
-         * Create blocks based on templates found in Sage's "views/blocks" directory
-         */
+    {           
+        // Create blocks based on templates found in Sage's "views/blocks" directory        
         add_action('acf/init', [ $this->app['acfblocks'], 'createBlocks' ]);
     }
 }

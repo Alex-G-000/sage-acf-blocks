@@ -23,23 +23,7 @@ class ACFBlocks
         $this->app = $app;
         $this->fileFinder = $fileFinder;
         $this->sageFinder = $sageFinder;
-    }
-
-    /**
-     * Load template hook overrides file if available in app/ folder of theme.
-     */
-    public function loadThemeTemplateHooks()
-    {
-
-    }
-
-    /**
-     * Declare theme support.
-     */
-    public function addThemeSupport(): void
-    {
-
-    }
+    } 
 
     public function isSage10()
     {
@@ -205,33 +189,7 @@ class ACFBlocks
                     }
     
                     // Register the block with ACF
-                    \acf_register_block_type(apply_filters("tone/blocks/register-data", apply_filters("tone/blocks/$slug/register-data", $data)));
-
-                    // If this has custom fields defined load those too with wordplate ACF!
-                    if(!empty($file_headers['custom_fields']) && $file_headers['disabled'] !== 'true' ) {
-                        // Check that the file exists
-                        $cfSlug = $file_headers['custom_fields'];
-                        $realSlug = 'acf/'.$slug;
-                        
-                        // Get path to .php file
-                        $fieldFilePath = \Roots\resource_path("custom-fields/${cfSlug}");
-
-
-                        if( file_exists($fieldFilePath) ){
-                            $fieldArray = require_once $fieldFilePath;
-                            $fieldGroupOptions = [
-                                'title' => 'Block '.$file_headers['title'],
-                                'key' => $realSlug.'_fieldss',
-                                'fields' => $fieldArray,
-                                'location' => [
-                                    Location::if('block', $realSlug)
-                                ]
-                            ];
-
-                            // Transform locations in to something extended acf can read
-                            \register_extended_field_group($fieldGroupOptions);
-                        }
-                    }
+                    \acf_register_block_type(apply_filters("tone/blocks/register-data", apply_filters("tone/blocks/$slug/register-data", $data)));                    
                 }
             }
         }
@@ -311,9 +269,9 @@ class ACFBlocks
 
                     // Render main block template
                     echo \Roots\view($view, array_merge([ 
-                                                'block' => $block, 
-                                                'bandSpacing' => $this->getSpacingConfig()
-                                            ], $blockModel));
+                            'block' => $block, 
+                            'bandSpacing' => $this->getSpacingConfig()
+                        ], $blockModel));
                 }
             } else {
                 echo \App\template(locate_template("${directory}/${slug}"), ['block' => $block]);
