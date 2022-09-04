@@ -20,7 +20,7 @@ Add the repo to the "repositories" list in composer.json located in the theme.
 
 Install the composer package (in the theme folder).
 
-    composer require alex-g-000/sage-acf-blocks
+    composer require alexeydev/sage-acf-blocks
 
 Add the package to the cached package manifest.
 
