@@ -14,7 +14,7 @@ Add the repo to the "repositories" list in composer.json located in the theme.
 
     {
         "type": "vcs",
-        "url": "git@bitbucket.org:toneagency/sage-acf-blocks.git"
+        "url": "git@github.com:Alex-G-000/sage-acf-blocks.git"
     }
 
 
