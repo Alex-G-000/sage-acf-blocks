@@ -9,10 +9,6 @@ use Illuminate\Support\Str;
 
 use function Roots\view;
 
-use \WordPlate\Acf\ConditionalLogic;
-use \WordPlate\Acf\Location;
-
-
 class ACFBlocks
 {
     public function __construct(
