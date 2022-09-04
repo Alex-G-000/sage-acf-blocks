@@ -1,0 +1,48 @@
+{
+  "name": "alexeydev/sage-acf-blocks",
+  "type": "library",
+  "license": "MIT",
+  "description": "",
+  "homepage": "https://www.alexey-dev.site/",
+  "authors": [
+    {
+      "name": "Alexey Geyvan",
+      "email": "alexey.geyvan@gmail.com"
+    },
+    {
+      "name": "Brandon Ingham",
+      "email": "brandon@tone.co.uk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AGdev\\Sage\\ACFBlocks\\": "src/"
+    }
+  },
+  "require": {
+    "roots/acorn": "*",
+    "wordplate/acf": "^11.2"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~3.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "test": [
+      "phpcs --ignore=vendor --extensions=php --standard=PSR2 ."
+    ]
+  },
+  "archive" : {
+    "exclude": [
+      ".gitignore"
+    ]
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "AGdev\\Sage\\ACFBlocks\\ACFBlocksServiceProvider"
+      ]
+    }
+  }
+}
