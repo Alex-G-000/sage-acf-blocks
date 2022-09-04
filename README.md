@@ -81,32 +81,6 @@ Use the example below to configure your block, and provide correct paths for:
 --}}
 ```
 
-
-## Block Custom Fields
-### sage-theme/resources/custom-fields/blocks
-WordPlate Extended ACF PHP custom field registrations can go here.
-
-#### Example
-```
-<?php
-use \WordPlate\Acf\Fields\Accordion;
-use \WordPlate\Acf\Fields\Repeater;
-use \WordPlate\Acf\Fields\Text;
-use \WordPlate\Acf\Fields\WysiwygEditor;
-
-return [
-    Accordion::make('Accordion Questions', 'acc_questions')->multiExpand(),
-        Repeater::make('Accordion Questions', 'accordion_questions')->fields([
-            Text::make('Accordion Heading', 'accordion_heading'),
-            WysiwygEditor::make('Accordion Content', 'accordion_copy')
-        ])
-        ->buttonLabel('Add Question')
-        ->layout('block'),
-    Accordion::make('EndpointOne')->multiExpand()->endpoint()
-];
-```
-
-
 ## Block JS / CSS
 ### resources/assets/scripts/blocks
 Your custom block scripts have to go in this folder to be compiled properly.
