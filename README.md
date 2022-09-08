@@ -43,9 +43,6 @@ Use the example below to configure your block, and provide correct paths for:
 * EnqueueScript
     * Add any block front-end JS to this file.
     * **Optional:** Remove this line to skip this option.
-* CustomFields
-    * Add your block custom fields to this file as described below.
-    * **Optional:** Remove this line to skip this option.
 * Controller
     * Add your block model and logic to this file.
     * You can ignore controllers and just add get_field() directly to the view.
@@ -61,8 +58,6 @@ Use the example below to configure your block, and provide correct paths for:
   Description: Block description
   Keywords: example block keyword tags
   Align: wide
-  EnqueueStyle: styles/blocks/example-block.css
-  EnqueueScript: scripts/blocks/example-block.js
 --}}
 ```
 
@@ -76,7 +71,6 @@ Use the example below to configure your block, and provide correct paths for:
   Align: wide
   EnqueueStyle: styles/blocks/example-block.css
   EnqueueScript: scripts/blocks/example-block.js
-  CustomFields: blocks/example-block.php
   Controller: example.php
 --}}
 ```
@@ -85,7 +79,7 @@ Use the example below to configure your block, and provide correct paths for:
 ### resources/assets/scripts/blocks
 Your custom block scripts have to go in this folder to be compiled properly.
 
-**Note:** You are responsible for `npm install`'ing any packages that the scripts in each block might use. A complete list can be found here.
+**Note:** You are responsible for `npm install`'ing any packages that the scripts in each block might use. 
 
 ### resources/assets/styles/blocks
 Your custom block styles have to go in this folder to be compiled properly.
@@ -106,4 +100,4 @@ return [
 ]
 ```
 
-This example will make $title available in 
+This example will make $title variable available in the view block-slug.blade.php
