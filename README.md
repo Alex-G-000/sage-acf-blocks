@@ -1,4 +1,4 @@
-# **Tone Sage ACF Blocks**
+# **Sage ACF Blocks**
 
 Easily add pre-built block templates, and register your own blocks in Sage 10 and ACF.
 
