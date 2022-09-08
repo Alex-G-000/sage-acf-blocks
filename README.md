@@ -2,7 +2,7 @@
 
 Easily add pre-built block templates, and register your own blocks in Sage 10 and ACF.
 
-**NOTE:** This repo is a little bit of a mess. Give me time and I'll tidy it up, but the important bit is it works!
+**NOTE:** There are still some minor things to fix, but the important bit is it works!
 
 # **Requirements**
 - Sage 10
