@@ -93,11 +93,11 @@ You can optionally attach a controller to the block that you can put logic in an
 Controller: block-slug.php
 ```
 
-#### Example block-models/block-slug.php:
+#### Example block-controllers/block-slug.php:
 ```
 return [
     'title' => get_field('title')
 ]
 ```
 
-This example will make $title variable available in the view block-slug.blade.php
+This example will make $title variable available in the view  block-views/block-slug.blade.php
